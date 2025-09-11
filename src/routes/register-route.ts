@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { createRegistration } from "../controllers/register-controller";
+import { getAllRegistration } from "../controllers/register-controller";
+// import { getRegistrationByStudentId } from "../controllers/register-controller";
+// import { sendRegistrationEmail } from "../controllers/register-controller";
+const router = Router();
+router.route("/").post(createRegistration);
+router.route("/").get(getAllRegistration);
+// router.route("/:studentId").get(getRegistrationByStudentId);
+// router.route("/sendEmail/:studentId").post(sendRegistrationEmail);
+export default router;
