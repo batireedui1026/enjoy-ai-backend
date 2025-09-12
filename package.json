@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon ./src/index.ts",
     "build": "tsc",
-    "start": "node build/index.ts"
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",
