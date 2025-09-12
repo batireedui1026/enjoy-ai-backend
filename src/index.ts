@@ -7,7 +7,7 @@ import lessonRoute from "./routes/lesson-route";
 dotenv.config();
 import provinceRouter from "./routes/province-route";
 import paymentRoute from "./routes/payment-route";
-const PORT = process.env.PORT || "";
+const PORT = process.env.PORT || 8001;
 const MONGO_URI = process.env.MONGO_URI || "";
 
 const app = express();
