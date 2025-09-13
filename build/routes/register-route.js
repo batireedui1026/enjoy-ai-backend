@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const register_controller_1 = require("../controllers/register-controller");
+const register_controller_2 = require("../controllers/register-controller");
+// import { getRegistrationByStudentId } from "../controllers/register-controller";
+// import { sendRegistrationEmail } from "../controllers/register-controller";
+const router = (0, express_1.Router)();
+router.route("/").post(register_controller_1.createRegistration);
+router.route("/").get(register_controller_2.getAllRegistration);
+// router.route("/:studentId").get(getRegistrationByStudentId);
+// router.route("/sendEmail/:studentId").post(sendRegistrationEmail);
+exports.default = router;
