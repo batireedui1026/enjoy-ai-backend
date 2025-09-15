@@ -9,7 +9,7 @@ interface IRegistration extends Document {
   lastNames: string[];
   firstNames: string[];
   teacherName?: string;
-  ages: number[];
+  ages: string;
   contactPhone: string;
   invoiceId?: string;
   paidAt?: Date;
@@ -24,7 +24,7 @@ const registrationSchema = new Schema<IRegistration>(
   {
     trainingType: {
       type: Schema.Types.ObjectId,
-      ref: "Class",
+      ref: "Lesson",
       required: [true, "Сургалтын төрлийг заавал оруулна."],
     },
     location: {
@@ -41,19 +41,19 @@ const registrationSchema = new Schema<IRegistration>(
       required: [true, "Багийн нэрийг заавал оруулна."],
     },
     lastNames: {
-      type: [{ type: String }],
+      type: [],
       required: [true, "Овог заавал оруулна."],
     },
     firstNames: {
-      type: [{ type: String }],
+      type: [],
       required: [true, "Нэр заавал оруулна."],
     },
     teacherName: {
-      type: [{ type: String }],
+      type: String,
       required: [true, "Багшийн нэр заавал оруулна."],
     },
     ages: {
-      type: [{ type: Number }],
+      type: String,
       required: [true, "Насыг заавал оруулна."],
     },
     contactPhone: {

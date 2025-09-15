@@ -4,7 +4,8 @@ import httpsRequest from "../utils/request-builder";
 
 export const createInvoiceFn = async (
   contactPhone: string,
-  payment_id: string
+  payment_id: string,
+  amount: number
 ) => {
   const dynamicDescription = ` ${contactPhone}`;
   console.log(dynamicDescription);
@@ -29,9 +30,9 @@ export const createInvoiceFn = async (
       minimum_amount: null,
       allow_exceed: false,
       maximum_amount: null,
-      amount: 50,
+      amount: amount,
       callback_url:
-        "https://enjoyai.steam.mn/api/v1/payment/payment_id?payment_id=" +
+        "https://backend.steam.mn/api/v1/payment/payment_id?payment_id=" +
         payment_id,
       sender_staff_code: "online",
       note: null,
@@ -45,7 +46,7 @@ export const createInvoiceFn = async (
         {
           line_description: dynamicDescription,
           line_quantity: 1.0,
-          line_unit_price: 50,
+          line_unit_price: amount,
           note: "-",
         },
       ],
