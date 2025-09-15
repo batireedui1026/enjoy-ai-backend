@@ -4,7 +4,7 @@ const mongoose_1 = require("mongoose");
 const registrationSchema = new mongoose_1.Schema({
     trainingType: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Class",
+        ref: "Lesson",
         required: [true, "Сургалтын төрлийг заавал оруулна."],
     },
     location: {
@@ -21,19 +21,19 @@ const registrationSchema = new mongoose_1.Schema({
         required: [true, "Багийн нэрийг заавал оруулна."],
     },
     lastNames: {
-        type: [{ type: String }],
+        type: [],
         required: [true, "Овог заавал оруулна."],
     },
     firstNames: {
-        type: [{ type: String }],
+        type: [],
         required: [true, "Нэр заавал оруулна."],
     },
     teacherName: {
-        type: [{ type: String }],
+        type: String,
         required: [true, "Багшийн нэр заавал оруулна."],
     },
     ages: {
-        type: [{ type: Number }],
+        type: String,
         required: [true, "Насыг заавал оруулна."],
     },
     contactPhone: {

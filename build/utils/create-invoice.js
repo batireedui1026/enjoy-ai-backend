@@ -7,7 +7,7 @@ exports.createInvoiceFn = void 0;
 const logger_1 = __importDefault(require("../utils/logger"));
 const qpay_token_1 = require("../utils/qpay-token");
 const request_builder_1 = __importDefault(require("../utils/request-builder"));
-const createInvoiceFn = async (contactPhone, payment_id) => {
+const createInvoiceFn = async (contactPhone, payment_id, amount) => {
     const dynamicDescription = ` ${contactPhone}`;
     console.log(dynamicDescription);
     //   const payment_id = "12345678"
@@ -29,8 +29,8 @@ const createInvoiceFn = async (contactPhone, payment_id) => {
             minimum_amount: null,
             allow_exceed: false,
             maximum_amount: null,
-            amount: 50,
-            callback_url: "https://enjoyai.steam.mn/api/v1/payment/payment_id?payment_id=" +
+            amount: amount,
+            callback_url: "https://backend.steam.mn/api/v1/payment/payment_id?payment_id=" +
                 payment_id,
             sender_staff_code: "online",
             note: null,
@@ -44,7 +44,7 @@ const createInvoiceFn = async (contactPhone, payment_id) => {
                 {
                     line_description: dynamicDescription,
                     line_quantity: 1.0,
-                    line_unit_price: 50,
+                    line_unit_price: amount,
                     note: "-",
                 },
             ],
