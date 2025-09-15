@@ -40,8 +40,7 @@ export const createRegistration = async (req: Request, res: Response) => {
       contactPhone,
       paymentStatus,
       paymentAmount,
-      expireAt: new Date(Date.now() + 2 * 60 * 1000),
-      // expireAt: new Date(Date.now() + 25 * 60 * 1000),
+      expireAt: new Date(Date.now() + 25 * 60 * 1000),
     });
 
     console.log("Registrations:", registration._id.toHexString());
