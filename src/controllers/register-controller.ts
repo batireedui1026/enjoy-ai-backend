@@ -41,6 +41,7 @@ export const createRegistration = async (req: Request, res: Response) => {
       paymentStatus,
       paymentAmount,
       expireAt: new Date(Date.now() + 25 * 60 * 1000),
+      // expireAt: new Date(Date.now() + 26 * 60 * 1000),
     });
 
     console.log("Registrations:", registration._id.toHexString());
