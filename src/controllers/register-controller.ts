@@ -66,10 +66,12 @@ export const createRegistration = async (req: Request, res: Response) => {
 
 export const getAllRegistration = async (req: Request, res: Response) => {
   try {
-    const registrations = await Registration.find({});
-    // .populate("province")
+    const registrations = await Registration.find({})
+      .populate("location")
+      .populate("trainingType");
+    // .populate("location")
     // .populate({
-    //   path: "trainingType",
+    //   path: "trainingType",s
     //   select: "trainingType",
     //   populate: { path: "course_id", select: "name" },
     // });

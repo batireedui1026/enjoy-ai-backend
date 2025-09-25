@@ -48,7 +48,7 @@ import registrationRoute from "./routes/register-route";
 import lessonRoute from "./routes/lesson-route";
 import provinceRouter from "./routes/province-route";
 import paymentRoute from "./routes/payment-route";
-
+import userRoute from "./routes/user-route";
 dotenv.config();
 
 // const PORT = process.env.PORT || 8001;
@@ -63,6 +63,7 @@ app.use(cors());
 app.use("/api/v1/register", registrationRoute);
 app.use("/api/v1/lesson", lessonRoute);
 app.use("/api/v1/province", provinceRouter);
+app.use("/api/v1/user", userRoute);
 paymentRoute(app);
 
 // ✅ Health check endpoint for EB
