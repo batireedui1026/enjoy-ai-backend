@@ -5,4 +5,5 @@ const lesson_controller_1 = require("../controllers/lesson-controller");
 const router = (0, express_1.Router)();
 router.post("/", lesson_controller_1.createLesson);
 router.get("/", lesson_controller_1.getLesson);
+// test
 exports.default = router;

@@ -45,6 +45,7 @@ const register_route_1 = __importDefault(require("./routes/register-route"));
 const lesson_route_1 = __importDefault(require("./routes/lesson-route"));
 const province_route_1 = __importDefault(require("./routes/province-route"));
 const payment_route_1 = __importDefault(require("./routes/payment-route"));
+const user_route_1 = __importDefault(require("./routes/user-route"));
 dotenv_1.default.config();
 // const PORT = process.env.PORT || 8001;
 const PORT = parseInt(process.env.PORT || "8001", 10);
@@ -56,7 +57,9 @@ app.use((0, cors_1.default)());
 app.use("/api/v1/register", register_route_1.default);
 app.use("/api/v1/lesson", lesson_route_1.default);
 app.use("/api/v1/province", province_route_1.default);
+app.use("/api/v1/user", user_route_1.default);
 (0, payment_route_1.default)(app);
+// d
 // ✅ Health check endpoint for EB
 app.get("/", (req, res) => res.send("OK"));
 // Connect MongoDB and start server

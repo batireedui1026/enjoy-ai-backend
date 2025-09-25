@@ -29,8 +29,8 @@ const createRegistration = async (req, res) => {
             contactPhone,
             paymentStatus,
             paymentAmount,
-            expireAt: new Date(Date.now() + 2 * 60 * 1000),
-            // expireAt: new Date(Date.now() + 25 * 60 * 1000),
+            expireAt: new Date(Date.now() + 25 * 60 * 1000),
+            // expireAt: new Date(Date.now() + 26 * 60 * 1000),
         });
         console.log("Registrations:", registration._id.toHexString());
         const id = registration._id.toHexString();
@@ -52,10 +52,12 @@ const createRegistration = async (req, res) => {
 exports.createRegistration = createRegistration;
 const getAllRegistration = async (req, res) => {
     try {
-        const registrations = await register_model_1.default.find({});
-        // .populate("province")
+        const registrations = await register_model_1.default.find({})
+            .populate("location")
+            .populate("trainingType");
+        // .populate("location")
         // .populate({
-        //   path: "trainingType",
+        //   path: "trainingType",s
         //   select: "trainingType",
         //   populate: { path: "course_id", select: "name" },
         // });
