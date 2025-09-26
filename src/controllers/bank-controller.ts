@@ -194,7 +194,7 @@ export const callbackWebhook = async (req: Request, res: Response) => {
     await Registration.findByIdAndUpdate(paymentId, {
       paymentStatus: "paid",
       expireAt: null,
-      paymentAmount: 85000,
+      // paymentAmount: 85000,
       paidAt: new Date(),
     });
 
