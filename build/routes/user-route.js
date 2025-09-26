@@ -7,4 +7,5 @@ const router = (0, express_1.Router)();
 router.post("/login", user_controller_1.login);
 router.post("/create-admin", user_controller_2.createAdmin);
 router.get("/current-user", user_controller_1.currentUser);
+// d
 exports.default = router;

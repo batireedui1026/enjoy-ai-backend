@@ -161,7 +161,7 @@ const callbackWebhook = async (req, res) => {
         await register_model_1.default.findByIdAndUpdate(paymentId, {
             paymentStatus: "paid",
             expireAt: null,
-            paymentAmount: 85000,
+            // paymentAmount: 85000,
             paidAt: new Date(),
         });
         (0, logger_1.default)("info", "callback url paymentId: " + paymentId, "OK");
